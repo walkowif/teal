@@ -54,7 +54,7 @@
 #'   }
 #' )
 #' if (interactive()) {
-#'   runApp(app)
+#'   shinyApp(app$ui, app$server)
 #' }
 NULL
 
@@ -173,6 +173,7 @@ srv_teal <- function(id, modules, teal_data_rv, filter = teal_slices()) {
       # create a list of data following structure of the nested modules list structure.
       # Because it's easier to unpack modules and datasets when they follow the same nested structure.
       datasets_singleton <- teal_data_to_filtered_data(teal_data_rv())
+
       # Singleton starts with only global filters active.
       filter_global <- Filter(function(x) x$id %in% attr(filter, "mapping")$global_filters, filter)
       datasets_singleton$set_filter_state(filter_global)
@@ -195,7 +196,7 @@ srv_teal <- function(id, modules, teal_data_rv, filter = teal_slices()) {
             modules$datanames
           }
           # todo: subset teal_data to datanames
-          datasets_module <- teal_data_to_filtered_data(teal_data_rv())
+          datasets_module <- teal_data_to_filtered_data(teal_data_rv(), datanames = datanames)
 
           # set initial filters
           #  - filtering filters for this module

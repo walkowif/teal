@@ -54,7 +54,7 @@
 #'   }
 #' )
 #' if (interactive()) {
-#'   runApp(app)
+#'   shinyApp(app$ui, app$server)
 #' }
 #' @keywords internal
 NULL
@@ -109,7 +109,7 @@ ui_nested_tabs.teal_modules <- function(id, modules, datasets, depth = 0L, is_mo
 #' @rdname module_nested_tabs
 #' @export
 ui_nested_tabs.teal_module <- function(id, modules, datasets, depth = 0L, is_module_specific = FALSE) {
-  checkmate::assert_class(datasets, class = "FilteredData")
+  checkmate::assert_class(datasets, classes = "FilteredData")
   ns <- NS(id)
 
   args <- isolate(teal.transform::resolve_delayed(modules$ui_args, datasets))
@@ -213,7 +213,7 @@ srv_nested_tabs.teal_module <- function(id, datasets, modules, is_module_specifi
   moduleServer(id = id, module = function(input, output, session) {
     modules$server_args <- teal.transform::resolve_delayed(modules$server_args, datasets)
     if (!is.null(modules$datanames) && is_module_specific) {
-      datasets$srv_filter_panel("module_filter_panel", active_datanames = reactive(modules$datanames))
+      datasets$srv_filter_panel("module_filter_panel")
     }
 
     # Create two triggers to limit reactivity between filter-panel and modules.
@@ -288,7 +288,7 @@ srv_nested_tabs.teal_module <- function(id, datasets, modules, is_module_specifi
 #' @param trigger_data (`reactiveVal`) to trigger getting the filtered data
 #' @return list of reactive datasets with following attributes:
 #' - `code` (`character`) containing datasets reproducible code.
-#' - `join_keys` (`JoinKeys`) containing relationships between datasets.
+#' - `join_keys` (`join_keys`) containing relationships between datasets.
 #' - `metadata` (`list`) containing metadata of datasets.
 #'
 #' @keywords internal
@@ -311,8 +311,7 @@ srv_nested_tabs.teal_module <- function(id, datasets, modules, is_module_specifi
   )
 
   hashes <- calculate_hashes(datanames, datasets)
-  metadata <- lapply(datanames, datasets$get_metadata)
-  names(metadata) <- datanames
+  metadata <- sapply(datanames, datasets$get_metadata, simplify = FALSE)
 
   new_tdata(
     data,
@@ -322,8 +321,7 @@ srv_nested_tabs.teal_module <- function(id, datasets, modules, is_module_specifi
         c(
           get_rcode_str_install(),
           get_rcode_libraries(),
-          get_datasets_code(datanames, datasets, hashes),
-          teal.slice::get_filter_expr(datasets, datanames)
+          get_datasets_code(datanames, datasets, hashes)
         )
       }
     ),
