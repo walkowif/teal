@@ -25,13 +25,16 @@
     <loc>https://insightsengineering.github.io/teal/articles/blueprint/dataflow.html</loc>
   </url>
   <url>
-    <loc>https://insightsengineering.github.io/teal/articles/blueprint/ddl.html</loc>
-  </url>
-  <url>
     <loc>https://insightsengineering.github.io/teal/articles/blueprint/filter_panel.html</loc>
   </url>
   <url>
+    <loc>https://insightsengineering.github.io/teal/articles/blueprint/in_app_data.html</loc>
+  </url>
+  <url>
     <loc>https://insightsengineering.github.io/teal/articles/blueprint/index.html</loc>
+  </url>
+  <url>
+    <loc>https://insightsengineering.github.io/teal/articles/blueprint/input_data.html</loc>
   </url>
   <url>
     <loc>https://insightsengineering.github.io/teal/articles/blueprint/intro.html</loc>
@@ -40,10 +43,10 @@
     <loc>https://insightsengineering.github.io/teal/articles/blueprint/module_encapsulation.html</loc>
   </url>
   <url>
-    <loc>https://insightsengineering.github.io/teal/articles/blueprint/products_map.html</loc>
+    <loc>https://insightsengineering.github.io/teal/articles/blueprint/product_map.html</loc>
   </url>
   <url>
-    <loc>https://insightsengineering.github.io/teal/articles/blueprint/qenv.html</loc>
+    <loc>https://insightsengineering.github.io/teal/articles/bootstrap-themes-in-teal.html</loc>
   </url>
   <url>
     <loc>https://insightsengineering.github.io/teal/articles/creating-custom-modules.html</loc>
@@ -55,28 +58,16 @@
     <loc>https://insightsengineering.github.io/teal/articles/filter-panel.html</loc>
   </url>
   <url>
-    <loc>https://insightsengineering.github.io/teal/articles/including-adam-data-in-teal.html</loc>
+    <loc>https://insightsengineering.github.io/teal/articles/getting-started-with-teal.html</loc>
   </url>
   <url>
-    <loc>https://insightsengineering.github.io/teal/articles/including-general-data-in-teal.html</loc>
-  </url>
-  <url>
-    <loc>https://insightsengineering.github.io/teal/articles/including-mae-data-in-teal.html</loc>
+    <loc>https://insightsengineering.github.io/teal/articles/including-data-in-teal-applications.html</loc>
   </url>
   <url>
     <loc>https://insightsengineering.github.io/teal/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://insightsengineering.github.io/teal/articles/preprocessing-data.html</loc>
-  </url>
-  <url>
-    <loc>https://insightsengineering.github.io/teal/articles/teal-bs-themes.html</loc>
-  </url>
-  <url>
     <loc>https://insightsengineering.github.io/teal/articles/teal-options.html</loc>
-  </url>
-  <url>
-    <loc>https://insightsengineering.github.io/teal/articles/teal.html</loc>
   </url>
   <url>
     <loc>https://insightsengineering.github.io/teal/authors.html</loc>
@@ -100,6 +91,9 @@
     <loc>https://insightsengineering.github.io/teal/reference/append_module.html</loc>
   </url>
   <url>
+    <loc>https://insightsengineering.github.io/teal/reference/build_app_title.html</loc>
+  </url>
+  <url>
     <loc>https://insightsengineering.github.io/teal/reference/calculate_hashes.html</loc>
   </url>
   <url>
@@ -113,9 +107,6 @@
   </url>
   <url>
     <loc>https://insightsengineering.github.io/teal/reference/dot-datasets_to_data.html</loc>
-  </url>
-  <url>
-    <loc>https://insightsengineering.github.io/teal/reference/eval_code.html</loc>
   </url>
   <url>
     <loc>https://insightsengineering.github.io/teal/reference/example_cdisc_data.html</loc>
@@ -244,7 +235,13 @@
     <loc>https://insightsengineering.github.io/teal/reference/tdata2env.html</loc>
   </url>
   <url>
+    <loc>https://insightsengineering.github.io/teal/reference/tdata_deprecation.html</loc>
+  </url>
+  <url>
     <loc>https://insightsengineering.github.io/teal/reference/teal-package.html</loc>
+  </url>
+  <url>
+    <loc>https://insightsengineering.github.io/teal/reference/teal_data_datanames.html</loc>
   </url>
   <url>
     <loc>https://insightsengineering.github.io/teal/reference/teal_data_module.html</loc>
@@ -260,6 +257,9 @@
   </url>
   <url>
     <loc>https://insightsengineering.github.io/teal/reference/unfold_mapping.html</loc>
+  </url>
+  <url>
+    <loc>https://insightsengineering.github.io/teal/reference/validate_app_title_tag.html</loc>
   </url>
   <url>
     <loc>https://insightsengineering.github.io/teal/reference/validate_has_data.html</loc>
@@ -284,8 +284,5 @@
   </url>
   <url>
     <loc>https://insightsengineering.github.io/teal/reference/validate_one_row_per_id.html</loc>
-  </url>
-  <url>
-    <loc>https://insightsengineering.github.io/teal/reference/within.teal_data_module.html</loc>
   </url>
 </urlset>
