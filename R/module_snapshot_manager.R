@@ -80,7 +80,6 @@
 #'
 #' @author Aleksander Chlebowski
 #'
-#' @rdname snapshot_manager_module
 #' @keywords internal
 #'
 snapshot_manager_ui <- function(id) {
@@ -99,7 +98,6 @@ snapshot_manager_ui <- function(id) {
   )
 }
 
-#' @rdname snapshot_manager_module
 #' @keywords internal
 #'
 snapshot_manager_srv <- function(id, slices_global, mapping_matrix, filtered_data_list) {
