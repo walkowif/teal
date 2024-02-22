@@ -99,6 +99,7 @@ snapshot_manager_ui <- function(id) {
 }
 
 #' @keywords internal
+#' test1233
 #'
 snapshot_manager_srv <- function(id, slices_global, mapping_matrix, filtered_data_list) {
   checkmate::assert_character(id)
