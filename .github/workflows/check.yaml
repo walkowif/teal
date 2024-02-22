@@ -51,7 +51,7 @@ jobs:
     uses: insightsengineering/r.pkg.template/.github/workflows/linter.yaml@main
   roxygen:
     name: Roxygen 🅾
-    uses: insightsengineering/r.pkg.template/.github/workflows/roxygen.yaml@roxygen-workflow-improvements
+    uses: insightsengineering/r.pkg.template/.github/workflows/roxygen.yaml@test-branch-walkowif
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
