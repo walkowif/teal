@@ -5,12 +5,9 @@
 \alias{snapshot_manager_ui}
 \alias{snapshot}
 \alias{snapshot_manager}
-\alias{snapshot_manager_srv}
 \title{Filter state snapshot management}
 \usage{
 snapshot_manager_ui(id)
-
-snapshot_manager_srv(id, slices_global, mapping_matrix, filtered_data_list)
 }
 \arguments{
 \item{id}{(\code{character(1)}) \code{shiny} module id}
