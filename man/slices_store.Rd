@@ -33,8 +33,8 @@ Date and date time objects are stored in the following formats:
 \code{UTC} is the \verb{Coordinated Universal Time} timezone short-code).
 }
 
-This format is assumed during \code{slices_restore}. All \code{POSIX*t} objects in
-\code{selected} or \code{choices} fields of \code{teal_slice} objects are always printed in
+This format is assumed duuring \code{slices_restore}. All \code{POSIX*t} objects in
+\code{selected} or \code{choices} fields of \code{teal_slice} objects are alwaays printed in
 \code{UTC} timezone as well.
 }
 \seealso{
