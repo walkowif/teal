@@ -77,9 +77,9 @@ landing_popup_module <- function(label = "Landing Popup",
             id = "landingpopup",
             title = title,
             content,
-            footer         = buttons
+            footer = buttons
           )
-                       )
+        )
       })
     }
   )
