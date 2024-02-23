@@ -162,7 +162,7 @@ srv_teal <- function(id, modules, teal_data_rv, filter = teal_slices()) {
       env$progress <- shiny::Progress$new(session)
       env$progress$set(0.25, message = "Setting data")
 
-      # create a list of data following structure of the nested modules list structure.
+      # create a list of data folowing structure of the nested modules list structure.
       # Because it's easier to unpack modules and datasets when they follow the same nested structure.
       datasets_singleton <- teal_data_to_filtered_data(teal_data_rv())
 
