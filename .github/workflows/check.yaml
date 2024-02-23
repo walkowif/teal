@@ -86,3 +86,5 @@ jobs:
     uses: insightsengineering/r.pkg.template/.github/workflows/style.yaml@workflow-fixes
     with:
       auto-update: true
+    secrets:
+      REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
