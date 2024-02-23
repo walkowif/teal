@@ -44,14 +44,14 @@ slices_restore <- function(file) {
         if (!is.null(slice[[field]])) {
           if (length(slice[[field]]) > 0) {
             date_partial_regex <- "^[0-9]{4}-[0-9]{2}-[0-9]{2}"
-            time_stamp_regex <- paste0(date_partial_regex, "\\s[0-9]{2}:[0-9]{2}:[0-9]{2}\\sUTC$")
+            time_stamp_regex        <- paste0(date_partial_regex, "\\s[0-9]{2}:[0-9]{2}:[0-9]{2}\\sUTC$")
 
             slice[[field]] <-
               if (all(grepl(paste0(date_partial_regex, "$"), slice[[field]]))) {
                 as.Date(slice[[field]])
               } else if (all(grepl(time_stamp_regex, slice[[field]]))) {
                 as.POSIXct(slice[[field]], tz = "UTC")
-              } else {
+              } else          {
                 slice[[field]]
               }
           } else {
