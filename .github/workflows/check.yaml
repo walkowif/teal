@@ -43,6 +43,8 @@ jobs:
   coverage:
     name: Coverage 📔
     uses: insightsengineering/r.pkg.template/.github/workflows/test-coverage.yaml@debug-skip-phrases
+    with:
+      enable-covtracer: true
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
   linter:
