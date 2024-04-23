@@ -10,10 +10,10 @@ on:
       - ready_for_review
     branches:
       - main
-      - quarto-typst
   push:
     branches:
       - main
+      - quarto-typst
   workflow_dispatch:
 
 jobs:
