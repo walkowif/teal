@@ -13,6 +13,7 @@ on:
   push:
     branches:
       - main
+      - test-urlchecker
   workflow_dispatch:
 
 jobs:
