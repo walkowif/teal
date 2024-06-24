@@ -1,4 +1,11 @@
-# teal 0.15.2.9036
+# teal 0.15.2.9045
+
+### Enhancement
+* Provided progress bar for modules loading and data filtering during teal app startup.
+
+### New features
+
+* Possibility to download lockfile to restore app session for reproducibility.
 
 ### Miscellaneous
 * Filter mapping display is no longer coupled to the snapshot manager.
