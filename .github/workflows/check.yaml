@@ -7,9 +7,7 @@ on:
       - wasm-poc
 
 jobs:
-  wasm:
-    name: WASM
-    # uses: insightsengineering/r.pkg.template/.github/workflows/wasm.yaml@wasm-poc
-    uses: r-wasm/actions/.github/workflows/deploy-cran-repo.yml@v1
-    with:
-      packages: '.'
+  build-wasm:
+    name: Build WASM 🧑‍🏭
+    needs: release
+    uses: insightsengineering/r.pkg.template/.github/workflows/wasm.yaml@wasm-poc
