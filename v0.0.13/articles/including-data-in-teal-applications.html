@@ -82,17 +82,6 @@
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
-<!-- start dropdown for versions --> <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle"
-          data-bs-toggle="dropdown" role="button"
-          aria-expanded="false" aria-haspopup="true"
-          id="dropdown-versions">Versions</a> <div class="dropdown-menu" aria-labelledby="dropdown-versions"> <a class="dropdown-item" data-toggle="tooltip" title="" href="https://walkowif.github.io/teal/main">main</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://walkowif.github.io/teal/latest-tag">latest-tag</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://walkowif.github.io/teal/v0.14.0">v0.14.0</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://walkowif.github.io/teal/v0.13.0">v0.13.0</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://walkowif.github.io/teal/v0.12.0">v0.12.0</a>
-<a class="dropdown-item" data-toggle="tooltip" title="" href="https://walkowif.github.io/teal/v0.0.13">v0.0.13</a> </div></li>
-<!-- end dropdown for versions -->
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-reports">Reports</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-reports">
@@ -418,7 +407,7 @@ but can become verified by running the <code>verify</code> function.</p>
 <div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data_with_code</span></span>
 <span><span class="co">#&gt; ✅︎ verified teal_data object</span></span>
-<span><span class="co">#&gt; <span style="color: #0000BB; font-weight: bold;">&lt;environment: 0x5639e77a3ab0&gt;</span><span style="font-weight: bold;"> [L]</span></span></span>
+<span><span class="co">#&gt; <span style="color: #0000BB; font-weight: bold;">&lt;environment: 0x562a888d9ab0&gt;</span><span style="font-weight: bold;"> [L]</span></span></span>
 <span><span class="co">#&gt; Parent: &lt;environment: package:teal&gt;</span></span>
 <span><span class="co">#&gt; Bindings:</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">•</span> not_a_dataset: &lt;chr&gt; [L]</span></span>
@@ -429,7 +418,7 @@ but can become verified by running the <code>verify</code> function.</p>
 <span><span class="va">data_with_objects_and_code</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/teal_data.html">teal_data</a></span><span class="op">(</span>iris <span class="op">=</span> <span class="va">iris</span>, cars <span class="op">=</span> <span class="va">mtcars</span>, code <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/expression.html" class="external-link">expression</a></span><span class="op">(</span><span class="va">iris</span> <span class="op">&lt;-</span> <span class="va">iris</span>, <span class="va">cars</span> <span class="op">&lt;-</span> <span class="va">mtcars</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">data_with_objects_and_code</span></span>
 <span><span class="co">#&gt; ✖ unverified teal_data object</span></span>
-<span><span class="co">#&gt; <span style="color: #0000BB; font-weight: bold;">&lt;environment: 0x5639edf796b0&gt;</span><span style="font-weight: bold;"> [L]</span></span></span>
+<span><span class="co">#&gt; <span style="color: #0000BB; font-weight: bold;">&lt;environment: 0x562a8f0af678&gt;</span><span style="font-weight: bold;"> [L]</span></span></span>
 <span><span class="co">#&gt; Parent: &lt;environment: package:teal&gt;</span></span>
 <span><span class="co">#&gt; Bindings:</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">•</span> cars: &lt;df[,11]&gt; [L]</span></span>
@@ -439,7 +428,7 @@ but can become verified by running the <code>verify</code> function.</p>
 <span><span class="va">data_with_objects_and_code_ver</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://insightsengineering.github.io/teal.data/latest-tag/reference/verify.html">verify</a></span><span class="op">(</span><span class="va">data_with_objects_and_code</span><span class="op">)</span></span>
 <span><span class="va">data_with_objects_and_code_ver</span></span>
 <span><span class="co">#&gt; ✅︎ verified teal_data object</span></span>
-<span><span class="co">#&gt; <span style="color: #0000BB; font-weight: bold;">&lt;environment: 0x5639edf796b0&gt;</span><span style="font-weight: bold;"> [L]</span></span></span>
+<span><span class="co">#&gt; <span style="color: #0000BB; font-weight: bold;">&lt;environment: 0x562a8f0af678&gt;</span><span style="font-weight: bold;"> [L]</span></span></span>
 <span><span class="co">#&gt; Parent: &lt;environment: package:teal&gt;</span></span>
 <span><span class="co">#&gt; Bindings:</span></span>
 <span><span class="co">#&gt; <span style="color: #00BBBB;">•</span> cars: &lt;df[,11]&gt; [L]</span></span>
