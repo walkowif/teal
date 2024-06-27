@@ -4,7 +4,8 @@ name: R-hub
 on:
   push:
     branches:
-      - test-rhub-workflows
+      # - setup-r-depenendcies-action-test
+      - main
 
 jobs:
   rhub:
