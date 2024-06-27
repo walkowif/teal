@@ -20,6 +20,17 @@ jobs:
   # audit:
   #   name: Audit Dependencies 🕵️‍♂️
   #   uses: insightsengineering/r.pkg.template/.github/workflows/audit.yaml@main
+  rhub:
+    name: R-hub
+    uses: insightsengineering/r.pkg.template/.github/workflows/rhub.yaml@test-rhub-workflows
+    with:
+      lookup-refs: |
+        insightsengineering/teal.code
+        insightsengineering/teal.data
+        insightsengineering/teal.logger
+        insightsengineering/teal.slice
+        insightsengineering/teal.reporter
+        insightsengineering/teal.widgets
   r-cmd:
     name: R CMD Check 🧬
     uses: insightsengineering/r.pkg.template/.github/workflows/build-check-install.yaml@replace-staged-dependencies-with-setup-r-dependencies
