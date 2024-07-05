@@ -9,20 +9,6 @@ jobs:
     name: R-hub
     uses: insightsengineering/r.pkg.template/.github/workflows/rhub.yaml@test-rhub-workflows
     with:
-      config: >-
-        r-devel-linux-x86_64-debian-clang,
-        r-devel-linux-x86_64-debian-gcc,
-        clang19,
-        gcc14,
-        r-devel-windows-x86_64,
-        r-patched-linux-x86_64,
-        r-release-linux-x86_64,
-        r-release-macos-arm64,
-        r-release-macos-x86_64,
-        r-release-windows-x86_64,
-        r-oldrel-macos-arm64,
-        r-oldrel-macos-x86_64,
-        r-oldrel-windows-x86_64
       lookup-refs: |
         insightsengineering/teal.code
         insightsengineering/teal.data
