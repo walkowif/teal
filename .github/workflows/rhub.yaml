@@ -12,6 +12,8 @@ jobs:
       config: >-
         r-devel-linux-x86_64-debian-clang,
         r-devel-linux-x86_64-debian-gcc,
+        clang19,
+        gcc14,
         r-devel-windows-x86_64,
         r-patched-linux-x86_64,
         r-release-linux-x86_64,
