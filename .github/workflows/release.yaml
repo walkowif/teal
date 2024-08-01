@@ -13,7 +13,7 @@ jobs:
     uses: insightsengineering/r.pkg.template/.github/workflows/release.yaml@main
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
-  build-wasm:
-    name: Build WASM 🧑‍🏭
+  wasm:
+    name: Build WASM packages 🧑‍🏭
     needs: release
-    uses: insightsengineering/r.pkg.template/.github/workflows/wasm.yaml@wasm-poc
+    uses: insightsengineering/r.pkg.template/.github/workflows/wasm.yaml@main
