@@ -16,12 +16,15 @@ jobs:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
       default-landing-page: latest-tag
+      deps-installation-method: setup-r-dependencies
   validation:
     name: R Package Validation report 📃
     needs: release
     uses: insightsengineering/r.pkg.template/.github/workflows/validation.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
+    with:
+      deps-installation-method: setup-r-dependencies
   release:
     name: Create release 🎉
     uses: insightsengineering/r.pkg.template/.github/workflows/release.yaml@main
@@ -34,6 +37,7 @@ jobs:
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
+      deps-installation-method: setup-r-dependencies
       additional-env-vars: |
         _R_CHECK_CRAN_INCOMING_REMOTE_=false
       additional-r-cmd-check-params: --as-cran
@@ -52,6 +56,8 @@ jobs:
     uses: insightsengineering/r.pkg.template/.github/workflows/test-coverage.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
+    with:
+      deps-installation-method: setup-r-dependencies
   wasm:
     name: Build WASM packages 🧑‍🏭
     needs: release
