@@ -11,7 +11,7 @@ jobs:
   docs:
     name: Pkgdown Docs 📚
     needs: release
-    uses: insightsengineering/r.pkg.template/.github/workflows/pkgdown.yaml@main
+    uses: insightsengineering/r.pkg.template/.github/workflows/pkgdown.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
@@ -19,7 +19,7 @@ jobs:
   validation:
     name: R Package Validation report 📃
     needs: release
-    uses: insightsengineering/r.pkg.template/.github/workflows/validation.yaml@main
+    uses: insightsengineering/r.pkg.template/.github/workflows/validation.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
   release:
@@ -30,7 +30,7 @@ jobs:
   build:
     name: Build package and reports 🎁
     needs: [release, docs]
-    uses: insightsengineering/r.pkg.template/.github/workflows/build-check-install.yaml@main
+    uses: insightsengineering/r.pkg.template/.github/workflows/build-check-install.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
@@ -49,7 +49,7 @@ jobs:
   coverage:
     name: Coverage 📔
     needs: [release, docs]
-    uses: insightsengineering/r.pkg.template/.github/workflows/test-coverage.yaml@main
+    uses: insightsengineering/r.pkg.template/.github/workflows/test-coverage.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
   wasm:
