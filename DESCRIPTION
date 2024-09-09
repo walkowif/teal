@@ -124,4 +124,3 @@ Collate:
     'validate_inputs.R'
     'validations.R'
     'zzz.R'
-Config/Needs/DepsDev: insightsengineering/teal.data, insightsengineering/teal.slice, insightsengineering/teal.reporter
