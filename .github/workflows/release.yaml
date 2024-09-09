@@ -17,6 +17,13 @@ jobs:
     with:
       default-landing-page: latest-tag
       deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/teal.data
+        insightsengineering/teal.slice
+        insightsengineering/teal.code
+        insightsengineering/teal.logger
+        insightsengineering/teal.reporter
+        insightsengineering/teal.widgets
   validation:
     name: R Package Validation report 📃
     needs: release
@@ -25,6 +32,13 @@ jobs:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
       deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/teal.data
+        insightsengineering/teal.slice
+        insightsengineering/teal.code
+        insightsengineering/teal.logger
+        insightsengineering/teal.reporter
+        insightsengineering/teal.widgets
   release:
     name: Create release 🎉
     uses: insightsengineering/r.pkg.template/.github/workflows/release.yaml@main
@@ -38,6 +52,13 @@ jobs:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
       deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/teal.data
+        insightsengineering/teal.slice
+        insightsengineering/teal.code
+        insightsengineering/teal.logger
+        insightsengineering/teal.reporter
+        insightsengineering/teal.widgets
       additional-env-vars: |
         _R_CHECK_CRAN_INCOMING_REMOTE_=false
       additional-r-cmd-check-params: --as-cran
@@ -58,6 +79,13 @@ jobs:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
       deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/teal.data
+        insightsengineering/teal.slice
+        insightsengineering/teal.code
+        insightsengineering/teal.logger
+        insightsengineering/teal.reporter
+        insightsengineering/teal.widgets
   wasm:
     name: Build WASM packages 🧑‍🏭
     needs: release
