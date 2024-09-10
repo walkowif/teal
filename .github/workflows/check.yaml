@@ -21,10 +21,18 @@ jobs:
     uses: insightsengineering/r.pkg.template/.github/workflows/audit.yaml@main
   r-cmd:
     name: R CMD Check 🧬
-    uses: insightsengineering/r.pkg.template/.github/workflows/build-check-install.yaml@main
+    uses: insightsengineering/r.pkg.template/.github/workflows/build-check-install.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
+      deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/teal.data
+        insightsengineering/teal.slice
+        insightsengineering/teal.code
+        insightsengineering/teal.logger
+        insightsengineering/teal.reporter
+        insightsengineering/teal.widgets
       additional-env-vars: |
         _R_CHECK_CRAN_INCOMING_REMOTE_=false
         TESTING_DEPTH=5
@@ -44,10 +52,18 @@ jobs:
         https://raw.githubusercontent.com/insightsengineering/hex-stickers/main/thumbs/teal.png
   r-cmd-non-cran:
     name: R CMD Check (non-CRAN) 🧬
-    uses: insightsengineering/r.pkg.template/.github/workflows/build-check-install.yaml@main
+    uses: insightsengineering/r.pkg.template/.github/workflows/build-check-install.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
+      deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/teal.data
+        insightsengineering/teal.slice
+        insightsengineering/teal.code
+        insightsengineering/teal.logger
+        insightsengineering/teal.reporter
+        insightsengineering/teal.widgets
       additional-env-vars: |
         _R_CHECK_EXAMPLE_TIMING_THRESHOLD_=6
         NOT_CRAN=true
@@ -65,20 +81,37 @@ jobs:
         checking top-level files .* NOTE
   coverage:
     name: Coverage 📔
-    uses: insightsengineering/r.pkg.template/.github/workflows/test-coverage.yaml@main
+    uses: insightsengineering/r.pkg.template/.github/workflows/test-coverage.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
+    with:
+      deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/teal.data
+        insightsengineering/teal.slice
+        insightsengineering/teal.code
+        insightsengineering/teal.logger
+        insightsengineering/teal.reporter
+        insightsengineering/teal.widgets
   linter:
     if: github.event_name != 'push'
     name: SuperLinter 🦸‍♀️
     uses: insightsengineering/r.pkg.template/.github/workflows/linter.yaml@main
   roxygen:
     name: Roxygen 🅾
-    uses: insightsengineering/r.pkg.template/.github/workflows/roxygen.yaml@main
+    uses: insightsengineering/r.pkg.template/.github/workflows/roxygen.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
       auto-update: true
+      deps-installation-method: setup-r-dependencies
+      lookup-refs: |
+        insightsengineering/teal.data
+        insightsengineering/teal.slice
+        insightsengineering/teal.code
+        insightsengineering/teal.logger
+        insightsengineering/teal.reporter
+        insightsengineering/teal.widgets
   gitleaks:
     name: gitleaks 💧
     uses: insightsengineering/r.pkg.template/.github/workflows/gitleaks.yaml@main
