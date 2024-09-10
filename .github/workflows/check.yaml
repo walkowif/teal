@@ -25,14 +25,14 @@ jobs:
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
-      deps-installation-method: setup-r-dependencies
-      lookup-refs: |
-        insightsengineering/teal.data
-        insightsengineering/teal.slice
-        insightsengineering/teal.code
-        insightsengineering/teal.logger
-        insightsengineering/teal.reporter
-        insightsengineering/teal.widgets
+      # deps-installation-method: setup-r-dependencies
+      # lookup-refs: |
+      #   insightsengineering/teal.data
+      #   insightsengineering/teal.slice
+      #   insightsengineering/teal.code
+      #   insightsengineering/teal.logger
+      #   insightsengineering/teal.reporter
+      #   insightsengineering/teal.widgets
       additional-env-vars: |
         _R_CHECK_CRAN_INCOMING_REMOTE_=false
         TESTING_DEPTH=5
@@ -56,14 +56,14 @@ jobs:
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
-      deps-installation-method: setup-r-dependencies
-      lookup-refs: |
-        insightsengineering/teal.data
-        insightsengineering/teal.slice
-        insightsengineering/teal.code
-        insightsengineering/teal.logger
-        insightsengineering/teal.reporter
-        insightsengineering/teal.widgets
+      # deps-installation-method: setup-r-dependencies
+      # lookup-refs: |
+      #   insightsengineering/teal.data
+      #   insightsengineering/teal.slice
+      #   insightsengineering/teal.code
+      #   insightsengineering/teal.logger
+      #   insightsengineering/teal.reporter
+      #   insightsengineering/teal.widgets
       additional-env-vars: |
         _R_CHECK_EXAMPLE_TIMING_THRESHOLD_=6
         NOT_CRAN=true
@@ -84,15 +84,15 @@ jobs:
     uses: insightsengineering/r.pkg.template/.github/workflows/test-coverage.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
-    with:
-      deps-installation-method: setup-r-dependencies
-      lookup-refs: |
-        insightsengineering/teal.data
-        insightsengineering/teal.slice
-        insightsengineering/teal.code
-        insightsengineering/teal.logger
-        insightsengineering/teal.reporter
-        insightsengineering/teal.widgets
+    # with:
+    #   deps-installation-method: setup-r-dependencies
+    #   lookup-refs: |
+    #     insightsengineering/teal.data
+    #     insightsengineering/teal.slice
+    #     insightsengineering/teal.code
+    #     insightsengineering/teal.logger
+    #     insightsengineering/teal.reporter
+    #     insightsengineering/teal.widgets
   linter:
     if: github.event_name != 'push'
     name: SuperLinter 🦸‍♀️
@@ -104,14 +104,14 @@ jobs:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
     with:
       auto-update: true
-      deps-installation-method: setup-r-dependencies
-      lookup-refs: |
-        insightsengineering/teal.data
-        insightsengineering/teal.slice
-        insightsengineering/teal.code
-        insightsengineering/teal.logger
-        insightsengineering/teal.reporter
-        insightsengineering/teal.widgets
+      # deps-installation-method: setup-r-dependencies
+      # lookup-refs: |
+      #   insightsengineering/teal.data
+      #   insightsengineering/teal.slice
+      #   insightsengineering/teal.code
+      #   insightsengineering/teal.logger
+      #   insightsengineering/teal.reporter
+      #   insightsengineering/teal.widgets
   gitleaks:
     name: gitleaks 💧
     uses: insightsengineering/r.pkg.template/.github/workflows/gitleaks.yaml@main
