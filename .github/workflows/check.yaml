@@ -20,6 +20,12 @@ jobs:
   #   name: Audit Dependencies 🕵️‍♂️
   #   uses: insightsengineering/r.pkg.template/.github/workflows/audit.yaml@main
   r-cmd:
+    # Token permissions
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      attestations: write
     name: R CMD Check 🧬
     uses: insightsengineering/r.pkg.template/.github/workflows/build-check-install.yaml@artifact-attestation
     secrets:
