@@ -77,15 +77,17 @@ jobs:
     uses: insightsengineering/r.pkg.template/.github/workflows/test-coverage.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     secrets:
       REPO_GITHUB_TOKEN: ${{ secrets.REPO_GITHUB_TOKEN }}
-    # with:
-    #   deps-installation-method: setup-r-dependencies
-    #   lookup-refs: |
-    #     insightsengineering/teal.data
-    #     insightsengineering/teal.slice
-    #     insightsengineering/teal.code
-    #     insightsengineering/teal.logger
-    #     insightsengineering/teal.reporter
-    #     insightsengineering/teal.widgets
+    with:
+      # deps-installation-method: setup-r-dependencies
+      # lookup-refs: |
+      #   insightsengineering/teal.data
+      #   insightsengineering/teal.slice
+      #   insightsengineering/teal.code
+      #   insightsengineering/teal.logger
+      #   insightsengineering/teal.reporter
+      #   insightsengineering/teal.widgets
+      additional-env-vars: |
+        NOT_CRAN=true
   wasm:
     name: Build WASM packages 🧑‍🏭
     needs: release

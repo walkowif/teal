@@ -93,6 +93,8 @@ jobs:
         insightsengineering/teal.logger
         insightsengineering/teal.reporter
         insightsengineering/teal.widgets
+      additional-env-vars: |
+        NOT_CRAN=true
   linter:
     if: github.event_name != 'push'
     name: SuperLinter 🦸‍♀️
