@@ -63,7 +63,7 @@ jobs:
         inputs.chosen-workflow == 'rhub'
       )
     name: R-hub 🌐
-    uses: insightsengineering/r.pkg.template/.github/workflows/rhub.yaml@main
+    uses: insightsengineering/r.pkg.template/.github/workflows/rhub.yaml@choose-between-staged-dependencies-and-setup-r-dependencies
     with:
       lookup-refs: |
         insightsengineering/teal.data

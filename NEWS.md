@@ -11,7 +11,7 @@
 
 ### Breaking changes
 
-* Setting `datanames()` on `data` passed to teal application no longer has effect. In order to change `teal_module`'s 
+* Setting `datanames()` on `data` passed to teal application no longer has effect. In order to change `teal_module`'s
 `datanames` one should modify `module$datanames`.
 * The `landing_popup_module()` needs to be passed as the `landing_popup` argument of `init` instead of being passed as a module of the `modules` argument of `init`.
 * `teal` no longer re-export `%>%`. Please load `library(magrittr)` instead or use `|>` from `base`.
