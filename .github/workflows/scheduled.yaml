@@ -63,7 +63,7 @@ jobs:
         inputs.chosen-workflow == 'rhub'
       )
     name: R-hub 🌐
-    uses: insightsengineering/r.pkg.template/.github/workflows/rhub.yaml@rhub-binary-package-repositories-testing
+    uses: insightsengineering/r.pkg.template/.github/workflows/rhub.yaml@fix/copy-and-restore-description
     with:
       lookup-refs: |
         insightsengineering/teal.data
