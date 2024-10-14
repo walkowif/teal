@@ -10,9 +10,9 @@ on:
       - ready_for_review
     branches:
       - main
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
 
 jobs:
