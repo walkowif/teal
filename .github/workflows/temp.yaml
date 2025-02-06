@@ -11,7 +11,7 @@ jobs:
     name: Test 🔍
     runs-on: ubuntu-latest
 
-  steps:
+    steps:
     - name: Checkout Repo 🛎
       uses: actions/checkout@v4
 
