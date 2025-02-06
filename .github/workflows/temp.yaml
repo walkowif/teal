@@ -44,6 +44,8 @@ jobs:
             exit 0
           } fi
 
+          echo "Commit message checked."
+
           test_dir="tests/testthat/"
 
           # Get the list of R files that have changed
