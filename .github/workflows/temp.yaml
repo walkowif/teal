@@ -34,56 +34,58 @@ jobs:
               exit 0
           fi
 
-          # # Exit early if tag is on commit message even if it set to true
-          # test_all=$( git log -1 --pretty=%B | grep -F "[run-all-tests]" )
-          # if [ -z "$test_all" ]
-          # then {
-          #   echo "Last commit message forces to test everything."
-          #   exit 0
-          # } fi
+          echo "Checking commit message..."
 
-          # test_dir="tests/testthat/"
+          # Exit early if tag is on commit message even if it set to true
+          test_all=$( git log -1 --pretty=%B | grep -F "[run-all-tests]" )
+          if [ -z "$test_all" ]
+          then {
+            echo "Last commit message forces to test everything."
+            exit 0
+          } fi
 
-          # # Get the list of R files that have changed
-          # # https://github.com/cloudnativeto/envoy/blob/de67446fa8af973761bb4716f5143d73643baf8b/.github/workflows/get_build_targets.sh_bak#L9
-          # files=$(git diff --name-only HEAD FETCH_HEAD -- $test_dir R/*.R)
+          test_dir="tests/testthat/"
 
-          # if [ -n "$files" ]
-          # then {
-          #   echo "No R files affected: test everything."
-          #   exit 0
-          # } fi
+          # Get the list of R files that have changed
+          # https://github.com/cloudnativeto/envoy/blob/de67446fa8af973761bb4716f5143d73643baf8b/.github/workflows/get_build_targets.sh_bak#L9
+          files=$(git diff --name-only HEAD FETCH_HEAD -- $test_dir R/*.R)
 
-          # # Loop through each modified file and determine which tests to run
-          # for file in $files; do
+          if [ -n "$files" ]
+          then {
+            echo "No R files affected: test everything."
+            exit 0
+          } fi
 
-          #     # Extract the base name of the file, examples:
-          #     # tests/testthat/test-shinytest2-foo.R -> foo
-          #     # R/foo.R -> foo
-          #     base_name=$(basename "$file" .R | sed s/test-shinytest2-//g)
-          #     # Find matching test files (parenthesis to not match arguments)
-          #     test_files=$(grep -l "$base_name(" "$test_dir"test-shinytest2-*.R)
-          #     td=$TESTING_DEPTH
+          # Loop through each modified file and determine which tests to run
+          for file in $files; do
 
-          #     # Modify in place so that only modified modules are tested.
-          #     if [ -n "$test_files" ] && [ -z "$test_all" ];
-          #     then {
-          #         sed -i 's/skip_if_too_deep(5)/skip_if_too_deep(3)/g' "$test_files"
-          #         TESTING_DEPTH=3
-          #         echo "Testing with shinytest2 for $test_files";
-          #     } else {
-          #         # Flag for helpers
-          #         helper_modified="yes"
-          #         git restore $test_dir
-          #         echo "Run all tests"
-          #         break;
-          #     } fi
+              # Extract the base name of the file, examples:
+              # tests/testthat/test-shinytest2-foo.R -> foo
+              # R/foo.R -> foo
+              base_name=$(basename "$file" .R | sed s/test-shinytest2-//g)
+              # Find matching test files (parenthesis to not match arguments)
+              test_files=$(grep -l "$base_name(" "$test_dir"test-shinytest2-*.R)
+              td=$TESTING_DEPTH
 
-          #     # R file without corresponding test file: reset the testing depth
-          #     if [ -n "$helper_modified" ] || [ -n "$test_all" ];
-          #     then {
-          #         echo "Skip step or helper modifications detected."
-          #         TESTING_DEPTH=$td;
-          #     } fi
-          # done
+              # Modify in place so that only modified modules are tested.
+              if [ -n "$test_files" ] && [ -z "$test_all" ];
+              then {
+                  sed -i 's/skip_if_too_deep(5)/skip_if_too_deep(3)/g' "$test_files"
+                  TESTING_DEPTH=3
+                  echo "Testing with shinytest2 for $test_files";
+              } else {
+                  # Flag for helpers
+                  helper_modified="yes"
+                  git restore $test_dir
+                  echo "Run all tests"
+                  break;
+              } fi
+
+              # R file without corresponding test file: reset the testing depth
+              if [ -n "$helper_modified" ] || [ -n "$test_all" ];
+              then {
+                  echo "Skip step or helper modifications detected."
+                  TESTING_DEPTH=$td;
+              } fi
+          done
         shell: bash
