@@ -1,0 +1,38 @@
+name: Test 🧪
+
+on:
+  push:
+    branches:
+      - test-shell-issues
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Test 🔍
+    runs-on: ubuntu-latest
+
+  steps:
+    - name: Checkout Repo 🛎
+      uses: actions/checkout@v4
+
+    - name: Test
+      run: |
+        echo "test1"
+        # Bash script run
+        if ! command -v git > /dev/null 2>&1
+        then
+            echo "git could not be found"
+            exit 0
+        fi
+        if ! command -v grep > /dev/null 2>&1
+        then
+            echo "grep could not be found"
+            exit 0
+        fi
+        if ! command -v sed > /dev/null 2>&1
+        then
+            echo "sed could not be found"
+            exit 0
+        fi
+        echo "test1"
+      shell: bash
